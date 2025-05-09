@@ -42,7 +42,7 @@ export default function Landing() {
             <div className="profile-wrapper">
               <div className="profile-bg d-none d-md-block"></div>
               <img
-                src="https://github.com/katherinj/katherin-io/blob/main/katherin-io-ui/media/profile.jpg?raw=true"
+                src="/profile.jpg"
                 alt="Katherin"
                 className="profile-image"
               />
