@@ -1,22 +1,54 @@
 import * as React from "react";
-import { Container, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./Landing.css";
-import { Link } from "react-router-dom";
+
 export default function Landing() {
   return (
-    <section className="bg-light py-5 text-center">
+    <section className="landing-section">
       <Container>
-        <img
-          src="https://raw.githubusercontent.com/katherinj/katherin-io/refs/heads/main/katherin-io-ui/media/landing-page-profile-pic.jpeg"
-          className="profile-img"
-        />
-        <h1 className="display-4 fw-bold">Welcome to Katherin.io</h1>
-        <p className="lead">Software Engineer</p>
-        <Link to="/about">
-          <Button variant="primary" size="lg" className="mt-3">
-            Learn More
-          </Button>
-        </Link>
+        <Row className="align-items-center">
+          {/* Left Text */}
+          <Col md={6} className="mb-4 mb-md-0">
+            <h1 className="landing-title mb-3">
+              Hello,
+              <br />
+              I'm Katherin
+            </h1>
+            <p className="landing-subtext mb-3">
+              I am a software engineer who enjoys building things that are both
+              smart and simple. My passion lies in full-stack development,
+              cloud-based solutions, and educational technology.
+            </p>
+            <p className="landing-subtext mb-3">
+              I get excited about creative problem-solving and making data more
+              accessible through intuitive visualizations.
+            </p>
+            <p className="landing-subtext mb-4">
+              I focus on crafting solutions that are not just functional, but
+              thoughtfully designed.
+            </p>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fw-semibold text-decoration-underline text-dark"
+            >
+              View My Resume
+            </a>
+          </Col>
+
+          {/* Right Image */}
+          <Col md={6} className="d-flex justify-content-center">
+            <div className="profile-wrapper">
+              <div className="profile-bg d-none d-md-block"></div>
+              <img
+                src="https://github.com/katherinj/katherin-io/blob/main/katherin-io-ui/media/profile.jpg?raw=true"
+                alt="Katherin"
+                className="profile-image"
+              />
+            </div>
+          </Col>
+        </Row>
       </Container>
     </section>
   );
