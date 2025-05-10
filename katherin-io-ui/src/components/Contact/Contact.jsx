@@ -1,12 +1,30 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    alert("Your message has been sent!");
-    /* will handle laterr on */
+
+    emailjs
+      .sendForm(
+        "service_bi44eqo",
+        "template_wslic96",
+        e.target,
+        "RoCUV7dkt-TDx_Yg1"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Your message has been sent!");
+          e.target.reset(); // Optional: clear the form
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Something went wrong. Please try again.");
+        }
+      );
   };
 
   return (
@@ -52,6 +70,7 @@ export default function Contact() {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
+                name="name"
                 placeholder="Enter your name"
                 required
               />
@@ -61,6 +80,7 @@ export default function Contact() {
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 required
               />
@@ -70,6 +90,7 @@ export default function Contact() {
               <Form.Label>Message</Form.Label>
               <Form.Control
                 as="textarea"
+                name="message"
                 rows={5}
                 placeholder="Write your message here..."
                 required

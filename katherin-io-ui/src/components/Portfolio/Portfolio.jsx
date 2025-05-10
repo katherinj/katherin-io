@@ -4,28 +4,36 @@ import { Card, Container, Row, Col, Form } from "react-bootstrap";
 const projectsData = [
   {
     title: "TrackerMax",
-    liveLink: "",
-    liveLinkDescription: "",
-    description: "A brief description of Project 1...",
-    imageUrl: "../media/placeholder-image.png",
-    skills: ["JavaScript", "React", "HTML", "CSS"],
+    liveLink: "https://tracker-max.surge.sh/",
+    liveLinkDescription: "Live Site",
+    repoLink:
+      "https://github.com/Codepath-SITE-Workday9/BugTracker?tab=readme-ov-file",
+    repoLinkDescription: "GitHub Repo",
+    description: "A bug tracking tool built with the PERN stack.",
+    imageUrl: "trackermax.gif",
+    skills: ["React", "Node.js", "Express", "PostgreSQL"],
   },
   {
     title: "Word Cloud",
     liveLink: "https://katherinj.github.io/DataVisualization/assignment4/",
-    liveLinkDescription: "Live GitHub page",
-    imageUrl: "../media/placeholder-image.png",
+    liveLinkDescription: "Live GitHub Page",
+    repoLink:
+      "https://github.com/katherinj/DataVisualization/tree/main/assignment4",
+    repoLinkDescription: "GitHub Repo",
+    imageUrl: "wordcloud.gif",
     description:
-      "This Word Cloud Project involves creating a visual representation of textual data where the size of each word corresponds to its frequency or importance in the text",
+      "A visual representation of textual data where word size reflects frequency.",
     skills: ["React", "D3"],
   },
   {
-    title: "TrackerMax",
-    liveLink: "",
-    liveLinkDescription: "",
-    description: "A brief description of Project 1...",
-    imageUrl: "../media/placeholder-image.png",
-    skills: ["JavaScript", "React", "HTML", "CSS"],
+    title: "Light & Sound Memory Game",
+    liveLink: "https://vigorous-thunder-wash.glitch.me/",
+    liveLinkDescription: "Play Game",
+    repoLink: "https://github.com/katherinj/light-sound-memory-game",
+    repoLinkDescription: "GitHub Repo",
+    description: "A fun memory game using JavaScript, HTML, and CSS.",
+    imageUrl: "memorygame.gif",
+    skills: ["JavaScript", "HTML", "CSS"],
   },
 ];
 
@@ -68,10 +76,26 @@ export default function Portfolio() {
               />
               <Card.Body>
                 <Card.Title>{project.title}</Card.Title>
-                <Card.Link href={project.liveLink}>
-                  {project.liveLinkDescription}
-                </Card.Link>
-                <Card.Text>{project.description}</Card.Text>
+                {project.liveLink && (
+                  <Card.Link
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.liveLinkDescription}
+                  </Card.Link>
+                )}
+                <br />
+                {project.repoLink && (
+                  <Card.Link
+                    href={project.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.repoLinkDescription}
+                  </Card.Link>
+                )}
+                <Card.Text className="mt-2">{project.description}</Card.Text>
                 <Card.Text>
                   <strong>Skills: </strong>
                   {project.skills.join(", ")}

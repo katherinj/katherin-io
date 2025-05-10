@@ -1,186 +1,176 @@
 import React from "react";
 import { Container, Row, Col, Button, Accordion, Card } from "react-bootstrap";
+import "./About.css";
 
 export default function About() {
+  const skills = [
+    "Java",
+    "JavaScript",
+    "Python",
+    "C/C++",
+    "PostgreSQL",
+    "Spring Boot",
+    "HTML",
+    "CSS",
+    "React",
+    "Node",
+    "Express",
+    "Git",
+    "MySQL",
+    "Bash",
+    "Mockito",
+    "JUnit",
+  ];
+
   return (
-    <Container fluid id="about-me" className="py-5">
-      <h1 className="text-center mb-4 page-title">About Me</h1>
+    <section className="py-5" id="about-me" style={{ scrollMarginTop: "80px" }}>
+      <Container className="px-4" style={{ maxWidth: "1320px" }}>
+        <Container>
+          <h1 className="text-center mb-2 page-title">About Me</h1>
+          <p className="text-center text-muted mb-4">
+            A deeper look at my background, skills, and experience
+          </p>
 
-      <Row className="mb-5">
-        <Col>
-          <Card className="shadow-sm">
-            <Card.Body>
-              <Card.Title>Background</Card.Title>
-              <Card.Text>
-                I'm a dedicated and passionate full-stack software developer,
-                currently pursuing my Bachelor's degree in Computer Science at
-                New Jersey Institute of Technology. I have experience in
-                multiple programming languages and technologies, including Java,
-                JavaScript, Python, C/C++, PostgreSQL, Spring Boot, HTML, CSS,
-                React, Node, Express, and Git.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+          {/* Background Section */}
+          <Row className="mb-5 justify-content-center">
+            <Col md={10} lg={8}>
+              <Card className="shadow-sm">
+                <Card.Body>
+                  <Card.Title>Background</Card.Title>
+                  <Card.Text>
+                    I'm a full-stack software engineer currently completing my
+                    B.S. in Computer Science at NJIT. I’m passionate about
+                    building thoughtful, user-centered software — whether I’m
+                    working on frontend interfaces, backend systems, or tools
+                    that make data more accessible.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
 
-      <Row className="mb-5">
-        <Col>
-          <Card className="shadow-sm">
-            <Card.Body>
-              <Card.Title>Skills</Card.Title>
-              <div className="d-flex flex-wrap gap-2 mt-3">
-                {[
-                  "Java",
-                  "JavaScript",
-                  "Python",
-                  "C/C++",
-                  "PostgreSQL",
-                  "Spring Boot",
-                  "HTML",
-                  "CSS",
-                  "React",
-                  "Node",
-                  "Express",
-                  "Git",
-                  "MySQL",
-                  "Bash",
-                  "Mockito",
-                  "JUnit",
-                ].map((skill, index) => (
-                  <Button key={index} variant="outline-primary" size="sm">
-                    {skill}
-                  </Button>
-                ))}
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+          {/* Skills Section */}
+          <Row className="mb-5 justify-content-center">
+            <Col md={10} lg={8}>
+              <Card className="shadow-sm">
+                <Card.Body>
+                  <Card.Title>Skills</Card.Title>
+                  <div className="d-flex flex-wrap gap-2 mt-3">
+                    {skills.map((skill, index) => (
+                      <Button key={index} variant="outline-primary" size="sm">
+                        {skill}
+                      </Button>
+                    ))}
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
 
-      {/* Experiences Section */}
-      <Row className="mb-5">
-        <Col>
-          <Card className="shadow-sm">
-            <Card.Body>
-              <Card.Title>Previous Experiences</Card.Title>
-              <Accordion flush>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>
-                    Workday / Software Application Development Engineer Intern
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    Spearheaded a project on the Federal HR team focused on the
-                    generation of federal forms, ensuring secure capture and
-                    processing of data in PDF format * Contributed to the
-                    creation and refinement of a Technical Design Document,
-                    detailing software specifications, architectural designs,
-                    UML charts, and comprehensive testing requirements *
-                    Proficiently learned and utilized Workday’s proprietary
-                    object-oriented language, built atop the Java framework, to
-                    develop robust software solutions * Acquired hands-on
-                    experience with BIRT (Business Intelligence and Reporting
-                    Tools), leveraging JavaScript within BIRT to dynamically
-                    autosize fields for improved accuracy and presentation on
-                    federal forms * Collaborated actively within an Agile Scrum
-                    team, ensuring seamless communication and consistent
-                    progress towards set objectives * Managed and completed
-                    individual tasks, including tackling a diverse range of Jira
-                    tickets and successfully delivering on a personal epic*
-                    Spearheaded a project on the Federal HR team focused on the
-                    generation of federal forms, ensuring secure capture and
-                    processing of data in PDF format * Contributed to the
-                    creation and refinement of a Technical Design Document,
-                    detailing software specifications, architectural designs,
-                    UML charts, and comprehensive testing requirements *
-                    Proficiently learned and utilized Workday’s proprietary
-                    object-oriented language, built atop the Java framework, to
-                    develop robust software solutions * Acquired hands-on
-                    experience with BIRT (Business Intelligence and Reporting
-                    Tools), leveraging JavaScript within BIRT to dynamically
-                    autosize fields for improved accuracy and presentation on
-                    federal forms * Collaborated actively within an Agile Scrum
-                    team, ensuring seamless communication and consistent
-                    progress towards set objectives * Managed and completed
-                    individual tasks, including tackling a diverse range of Jira
-                    tickets and successfully delivering on a personal epic
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header>Netflix Pathways Bootcamp</Accordion.Header>
-                  <Accordion.Body>
-                    I participated in a 12-week immersive program at the Netflix
-                    Pathways Bootcamp, focusing on advanced back-end development
-                    skills and Java concepts. During the bootcamp, I gained
-                    hands-on experience creating efficient Java applications and
-                    microservices, using tools such as Spring Boot, SQL, and
-                    AWS.
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="2">
-                  <Accordion.Header>
-                    Workday x CodePath / Full Stack Software Development Intern
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    As a Full Stack Software Development Intern at Workday x
-                    CodePath, I was one of 35 selected from 1,800 applicants for
-                    a 10-week internship. I gained hands-on experience in
-                    full-stack web development, including design, database,
-                    back-end, front-end, testing, and deployment. I worked
-                    alongside professional mentors from Workday’s software
-                    engineering teams and developed an MVP using the PERN stack
-                    and Agile methodology within five weeks.
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="3">
-                  <Accordion.Header>
-                    Walmart Pharmacy / Certified Pharmacy Technician
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    As a Certified Pharmacy Technician at Walmart Pharmacy, I
-                    completed Connexus software training to access patient data,
-                    insurance billing, drug selection, and prescription
-                    interpretation. I also facilitated communication between
-                    patients, doctors, and other pharmacies to ensure patient
-                    safety and satisfaction.
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+          {/* Experience Section */}
+          <Row className="mb-5 justify-content-center">
+            <Col md={10} lg={8}>
+              <Card className="shadow-sm">
+                <Card.Body>
+                  <Card.Title>Experience</Card.Title>
+                  <Accordion flush>
+                    <Accordion.Item eventKey="0">
+                      <Accordion.Header>Workday / SWE Intern</Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            Led a project for the Federal HR team focused on
+                            dynamic PDF form generation
+                          </li>
+                          <li>
+                            Developed secure solutions using Workday’s
+                            proprietary OOP language built on Java
+                          </li>
+                          <li>
+                            Created and maintained detailed technical design
+                            documents and UML diagrams
+                          </li>
+                          <li>
+                            Customized BIRT reports with JavaScript for dynamic
+                            layout rendering
+                          </li>
+                          <li>
+                            Worked within an Agile Scrum team to deliver
+                            features across sprints using Jira
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="1">
+                      <Accordion.Header>
+                        Netflix Pathways Bootcamp
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        Completed a 12-week immersive backend program focusing
+                        on Java, Spring Boot, REST APIs, and AWS. Built scalable
+                        microservices and collaborated on real-world use cases
+                        under the guidance of Netflix engineers.
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="2">
+                      <Accordion.Header>
+                        Workday x CodePath / Full Stack Intern
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        Selected from 1,800+ applicants for a competitive
+                        10-week internship. Built a fully functional web
+                        application using the PERN stack, applying Agile
+                        workflows and industry-level deployment practices.
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="3">
+                      <Accordion.Header>
+                        Walmart Pharmacy / Certified Technician
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        Completed Connexus training to assist with prescription
+                        management, insurance billing, and patient communication
+                        — building both technical and client-facing experience.
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
 
-      <Row>
-        <Col>
-          <Card className="shadow-sm">
-            <Card.Body>
-              <Card.Title>Education</Card.Title>
-              <Accordion flush>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>
-                    New Jersey Institute of Technology
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    Pursuing B.S. in Computer Science, with a focus on software
-                    engineering, algorithms, and data structures.
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header>
-                    Mercer County Community College
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    Earned Associate's Degree in Computer Science. Courses
-                    included Programming Fundamentals, Calculus, and Database
-                    Systems.
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+          {/* Education Section */}
+          <Row className="justify-content-center">
+            <Col md={10} lg={8}>
+              <Card className="shadow-sm">
+                <Card.Body>
+                  <Card.Title>Education</Card.Title>
+                  <Accordion flush>
+                    <Accordion.Item eventKey="0">
+                      <Accordion.Header>
+                        New Jersey Institute of Technology
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        Pursuing a B.S. in Computer Science, with a focus on
+                        software engineering, data structures, and algorithms.
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="1">
+                      <Accordion.Header>
+                        Mercer County Community College
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        Completed foundational coursework in programming,
+                        calculus, and databases prior to transferring to NJIT.
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+    </section>
   );
 }
