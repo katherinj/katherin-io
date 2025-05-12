@@ -11,10 +11,16 @@ export default function MyNavbar() {
 
   return (
     <Navbar expand="lg" fixed="top" className="custom-navbar">
-      <Container>
-        <Navbar.Brand href="#home">
-          <img src="/logo.png" alt="Katherin Logo" style={{ height: "50px" }} />
+      <Container fluid className="px-4">
+        <Navbar.Brand href="#home" className="d-flex align-items-center">
+          <img
+            src="/logo.png"
+            alt="Katherin Logo"
+            style={{ height: "40px", width: "auto" }}
+            className="kj-logo-img"
+          />
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">

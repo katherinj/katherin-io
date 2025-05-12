@@ -24,29 +24,11 @@ export default function About() {
 
   return (
     <section id="about-me">
-      <Container>
+      <Container className="py-5">
         <h1 className="text-center mb-2 page-title">About Me</h1>
         <p className="text-center text-muted mb-4">
           A deeper look at my background, skills, and experience
         </p>
-
-        {/* Background Section */}
-        <Row className="mb-5 justify-content-center">
-          <Col>
-            <Card className="shadow-sm">
-              <Card.Body>
-                <Card.Title>Background</Card.Title>
-                <Card.Text>
-                  I'm a full-stack software engineer with a B.S. in Computer
-                  Science from NJIT. I’m passionate about building thoughtful,
-                  user-centered software — whether I’m working on frontend
-                  interfaces, backend systems, or tools that make data more
-                  accessible.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
 
         <Skills skills={skills} />
         <Experience />

@@ -53,7 +53,7 @@ export default function Portfolio() {
   });
 
   return (
-    <Container className="portfolio">
+    <Container className="portfolio py-5">
       <h1 className="text-center my-4">My Portfolio</h1>
 
       <Form.Group className="mb-4">

@@ -1,7 +1,29 @@
+.kj-logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+.custom-navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .navbar-nav .nav-link {
   position: relative;
   color: #989898;
   font-weight: 400;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #989898;
+  font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -21,19 +43,4 @@
   background-color: #82a8decb;
   display: block;
   transition: all 0.3s ease-in-out;
-}
-
-.custom-navbar {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  transition: background-color 0.3s ease;
-}
-
-.custom-navbar .navbar-nav .nav-link {
-  color: #989898;
-  transition: color 0.3s ease;
-}
-
-.custom-navbar .navbar-nav .nav-link.active-link {
-  color: #000;
 }
