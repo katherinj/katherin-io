@@ -1,0 +1,39 @@
+.navbar-nav .nav-link {
+  position: relative;
+  color: #989898;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link.active-link {
+  color: #000;
+}
+
+.navbar-nav .nav-link.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background-color: #82a8decb;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transition: background-color 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  color: #989898;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .nav-link.active-link {
+  color: #000;
+}

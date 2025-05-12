@@ -1,17 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import "./Navbar.css";
 
 export default function MyNavbar() {
+  const [activeLink, setActiveLink] = useState("about");
+
+  const handleSetActive = (link) => {
+    setActiveLink(link);
+  };
+
   return (
-    <Navbar bg="light" expand="lg" fixed="top">
+    <Navbar expand="lg" fixed="top" className="custom-navbar">
       <Container>
-        <Navbar.Brand href="#home">Katherin</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <img src="/logo.png" alt="Katherin Logo" style={{ height: "50px" }} />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#portfolio">Portfolio</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link
+              href="#about"
+              className={activeLink === "about" ? "active-link" : ""}
+              onClick={() => handleSetActive("about")}
+            >
+              About
+            </Nav.Link>
+            <Nav.Link
+              href="#portfolio"
+              className={activeLink === "portfolio" ? "active-link" : ""}
+              onClick={() => handleSetActive("portfolio")}
+            >
+              Portfolio
+            </Nav.Link>
+            <Nav.Link
+              href="#contact"
+              className={activeLink === "contact" ? "active-link" : ""}
+              onClick={() => handleSetActive("contact")}
+            >
+              Contact
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

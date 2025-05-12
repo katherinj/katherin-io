@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #f8f8f8;
+  color: #555;
+  font-size: 14px;
+  margin-top: 60px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-icons {
+  margin-bottom: 10px;
+}
+
+.footer-icons a {
+  color: #555;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #ab4e4f; /* Your accent color */
+}

@@ -17,12 +17,12 @@ export default function Contact() {
       .then(
         (result) => {
           console.log(result.text);
-          alert("Your message has been sent!");
-          e.target.reset(); // Optional: clear the form
+          alert("I received your message! I'll get back to you soon.");
+          e.target.reset();
         },
         (error) => {
           console.log(error.text);
-          alert("Something went wrong. Please try again.");
+          alert("Something went wrong. Please try again later.");
         }
       );
   };
@@ -34,7 +34,8 @@ export default function Contact() {
       <Row className="justify-content-center mb-5">
         <Col xs={12} md={6} className="text-center">
           <p className="lead">
-            Feel free to reach out via any of the platforms below:
+            Feel free to reach out via any of the platforms below or send me a
+            message. I look forward to connecting!
           </p>
           <div className="d-flex justify-content-center gap-3">
             <a
@@ -46,7 +47,7 @@ export default function Contact() {
               <FaLinkedin size={40} />
             </a>
             <a
-              href="https://github.com/katherinj?tab=repositories"
+              href="https://github.com/katherinj"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"

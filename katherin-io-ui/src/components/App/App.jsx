@@ -1,5 +1,12 @@
 import * as React from "react";
-import { MyNavbar, Landing, About, Portfolio, Contact } from "components";
+import {
+  MyNavbar,
+  Landing,
+  About,
+  Portfolio,
+  Contact,
+  Footer,
+} from "components";
 import "./App.css";
 
 export default function App() {
@@ -18,6 +25,7 @@ export default function App() {
       <div id="contact">
         <Contact />
       </div>
+      <Footer />
     </div>
   );
 }
