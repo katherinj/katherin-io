@@ -1,0 +1,55 @@
+/* All cursor elements are fixed and pointer-events:none so they don't interfere */
+.cursor-dot,
+.cursor-ring,
+.cursor-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+/* Sharp center dot */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent, #c8773a);
+  margin-left: -4px;
+  margin-top: -4px;
+  top: 0;
+  left: 0;
+  transition: width 0.15s, height 0.15s, background 0.15s;
+}
+
+/* Lagging glow ring */
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--accent, #c8773a);
+  opacity: 0.45;
+  margin-left: -18px;
+  margin-top: -18px;
+  top: 0;
+  left: 0;
+  background: var(--accent-glow, rgba(200,119,58,0.08));
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
+}
+
+/* Sparkle particle */
+.cursor-sparkle {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--accent, #c8773a) 0%, transparent 70%);
+  opacity: 0;
+  animation: sparkle-fade linear forwards;
+}
+
+@keyframes sparkle-fade {
+  0%   { opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0;   transform: translate(-50%, -80%) scale(0.3); }
+}
+
+/* Make cursor bigger when hovering links/buttons */
+a:hover ~ .cursor-dot,
+button:hover ~ .cursor-dot { width: 12px; height: 12px; }

@@ -1,25 +1,50 @@
 .footer {
-  width: 100%;
-  padding: 20px 0;
+  background-color: var(--ink);
+  color: var(--cream);
+  padding: 2.5rem 2rem 2rem;
   text-align: center;
-  background-color: #f8f8f8;
-  color: #555;
-  font-size: 14px;
-  margin-top: 60px;
-  border-top: 1px solid #ddd;
+  transition: background-color 0.35s;
+}
+
+.footer-wave {
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  color: var(--cream);
+  margin-bottom: 1.25rem;
+  user-select: none;
 }
 
 .footer-icons {
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .footer-icons a {
-  color: #555;
-  margin: 0 10px;
-  font-size: 20px;
-  transition: color 0.3s ease;
+  color: var(--cream);
+  transition:
+    color 0.2s,
+    transform 0.2s;
+  font-size: 1.2rem;
+  display: inline-flex;
 }
 
 .footer-icons a:hover {
-  color: #ab4e4f; /* Your accent color */
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  margin: 0 0 0.25rem;
+}
+
+.footer-made {
+  font-size: 0.72rem;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  margin: 0;
 }

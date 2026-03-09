@@ -1,0 +1,107 @@
+.contact-section {
+  background-color: var(--cream);
+  padding: 5rem 0;
+  transition: background-color 0.35s ease;
+}
+
+.contact-lead {
+  color: var(--warm-mid);
+  font-weight: 300;
+  font-size: 1rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  color: var(--warm-mid) !important;
+  transition: all 0.2s ease;
+  background: var(--card-bg);
+}
+
+.social-icon-link:hover {
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.contact-form-group { margin-bottom: 1.25rem; }
+
+.contact-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm-mid);
+  margin-bottom: 0.4rem;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93rem;
+  color: var(--ink);
+  background: var(--card-bg);
+  outline: none;
+  transition: border-color 0.2s, background 0.35s, color 0.35s;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 119, 58, 0.1);
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder { color: var(--muted); }
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ink);
+  color: var(--cream) !important;
+  border: none;
+  border-radius: 100px;
+  padding: 0.8rem 2.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s;
+}
+
+.contact-submit-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.contact-section {
+  transition: background-color 0.35s ease;
+}
+
+[data-theme="dark"] .contact-input,
+[data-theme="dark"] .contact-textarea {
+  background: var(--card-bg);
+  color: var(--ink);
+  border-color: var(--border);
+}

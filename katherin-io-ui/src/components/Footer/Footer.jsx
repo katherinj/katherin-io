@@ -4,25 +4,23 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
+      <div className="footer-wave" aria-hidden="true">✦ ✧ ✦ ✧ ✦</div>
       <div className="footer-icons">
-        <a
-          href="https://www.linkedin.com/in/katherin-jimenez"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://www.linkedin.com/in/katherin-jimenez-2a7876220/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
           <FaLinkedin />
         </a>
-        <a href="https://github.com/katherinj" target="_blank" rel="noreferrer">
+        <a href="https://github.com/katherinj" target="_blank" rel="noreferrer" aria-label="GitHub">
           <FaGithub />
         </a>
-        <a href="mailto:katjimenez98@gmail.com">
+        <a href="mailto:katherinmjimenezp@gmail.com" aria-label="Email">
           <FaEnvelope />
         </a>
       </div>
-      <p>
-        &copy; {new Date().getFullYear()} Katherin Jimenez. All rights reserved.
+      <p className="footer-copy">
+        &copy; {new Date().getFullYear()} Katherin Jimenez
       </p>
-    </div>
+      <p className="footer-made">designed & built with ♥</p>
+    </footer>
   );
 }

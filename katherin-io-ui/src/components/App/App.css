@@ -1,15 +1,6 @@
-html {
-  scroll-behavior: smooth;
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
-.main-content {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (max-width: 992px) {
-  .main-content {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
+.main-content { flex: 1; }
