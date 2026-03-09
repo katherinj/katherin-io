@@ -4,6 +4,10 @@
   width: auto;
 }
 
+[data-theme="dark"] .kj-logo-img {
+  filter: brightness(0) invert(1);
+}
+
 .custom-navbar {
   background-color: var(--navbar-bg);
   backdrop-filter: blur(16px);
@@ -18,7 +22,7 @@
   display: inline-block !important;
   position: relative;
   color: var(--muted);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
