@@ -50,6 +50,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+[data-theme="dark"] .navbar-nav .nav-link.active-link {
+  color: #ffffff;
+}
+
 @media (max-width: 991.98px) {
   .navbar-nav {
     text-align: center;
