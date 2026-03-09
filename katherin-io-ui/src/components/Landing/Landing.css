@@ -1,21 +1,135 @@
-/* Landing.css */
-
 .landing-section {
-  padding-top: 6rem;
+  padding-top: 7rem;
   padding-bottom: 6rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--cream);
+}
+
+/* ── Soft pastel blobs ───────────────────────────── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float-blob 9s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(240, 166, 192, 0.22), transparent 70%);
+  top: -100px; right: -60px;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(167, 139, 202, 0.18), transparent 70%);
+  bottom: 5%; left: -80px;
+  animation-delay: 3.5s;
+}
+
+.blob-3 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(240, 166, 192, 0.15), transparent 70%);
+  top: 40%; left: 35%;
+  animation-delay: 6s;
+}
+
+@keyframes float-blob {
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(-28px) scale(1.05); }
+}
+
+/* ── Text ────────────────────────────────────────── */
+.landing-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: block;
 }
 
 .landing-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 3.8rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.landing-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.landing-role {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--warm-mid);
+  min-height: 1.7rem;
+  margin-bottom: 0;
+}
+
+.typewriter-text {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: var(--accent-pink);
+  animation: blink 0.85s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.landing-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
+  border: none;
+  margin: 1.25rem 0;
+  border-radius: 2px;
 }
 
 .landing-subtext {
-  color: #6c757d;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  color: var(--warm-mid);
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 480px;
+  margin-bottom: 1.75rem;
 }
 
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink) !important;
+  border-bottom: 2px solid var(--accent-pink);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+  text-decoration: none !important;
+}
+
+.resume-link:hover { color: var(--accent) !important; }
+
+/* ── Profile image ───────────────────────────────── */
 .profile-wrapper {
   position: relative;
   width: fit-content;
@@ -23,21 +137,76 @@
 }
 
 .profile-image {
-  width: 350px;
-  height: 350px;
+  width: 340px;
+  height: 400px;
   object-fit: cover;
-  border-radius: 0.25rem;
+  object-position: top;
+  border-radius: 3px;
   z-index: 2;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-hover);
 }
 
 .profile-bg {
-  background-color: #82a8de3c;
-  width: 350px;
-  height: 350px;
+  background: linear-gradient(135deg, rgba(167, 139, 202, 0.25) 0%, rgba(147, 191, 232, 0.25) 100%);
+  width: 340px;
+  height: 400px;
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 18px; left: 18px;
   z-index: 1;
+  border-radius: 3px;
+}
+
+.profile-halo {
+  position: absolute;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 166, 192, 0.15) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+/* ── Available badge ─────────────────────────────── */
+.available-badge {
+  position: absolute;
+  bottom: -14px;
+  right: -10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--warm-mid);
+  box-shadow: var(--shadow);
+  white-space: nowrap;
+}
+
+.available-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #5cba82;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(92, 186, 130, 0.5); }
+  50% { box-shadow: 0 0 0 5px rgba(92, 186, 130, 0); }
+}
+
+@media (max-width: 767px) {
+  .landing-title { font-size: 2.6rem; }
+  .profile-image { width: 260px; height: 300px; }
+  .profile-bg { width: 260px; height: 300px; }
 }

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "./Navbar.css";
 
-export default function MyNavbar() {
+export default function MyNavbar({ children }) {
   const [expanded, setExpanded] = useState(false);
-  const [activeLink, setActiveLink] = useState("about");
+  const [activeLink, setActiveLink] = useState("home");
 
   const handleNavClick = (link) => {
     setActiveLink(link);
@@ -26,28 +26,18 @@ export default function MyNavbar() {
 
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link
-              href="#about"
-              className={activeLink === "about" ? "active-link" : ""}
-              onClick={() => handleNavClick("about")}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              href="#portfolio"
-              className={activeLink === "portfolio" ? "active-link" : ""}
-              onClick={() => handleNavClick("portfolio")}
-            >
-              Portfolio
-            </Nav.Link>
-            <Nav.Link
-              href="#contact"
-              className={activeLink === "contact" ? "active-link" : ""}
-              onClick={() => handleNavClick("contact")}
-            >
-              Contact
-            </Nav.Link>
+          <Nav className="ms-auto align-items-center gap-1">
+            {["about", "portfolio", "contact"].map(link => (
+              <Nav.Link
+                key={link}
+                href={`#${link}`}
+                className={activeLink === link ? "active-link" : ""}
+                onClick={() => handleNavClick(link)}
+              >
+                {link.charAt(0).toUpperCase() + link.slice(1)}
+              </Nav.Link>
+            ))}
+            <div className="ms-3">{children}</div>
           </Nav>
         </Navbar.Collapse>
       </Container>
