@@ -23,7 +23,10 @@ function TypeWriter() {
       return () => clearTimeout(t);
     }
     if (!deleting && displayed.length < current.length) {
-      const t = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 60);
+      const t = setTimeout(
+        () => setDisplayed(current.slice(0, displayed.length + 1)),
+        60,
+      );
       return () => clearTimeout(t);
     }
     if (!deleting && displayed.length === current.length) {
@@ -32,12 +35,15 @@ function TypeWriter() {
       return () => clearTimeout(t);
     }
     if (deleting && displayed.length > 0) {
-      const t = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 35);
+      const t = setTimeout(
+        () => setDisplayed(current.slice(0, displayed.length - 1)),
+        35,
+      );
       return () => clearTimeout(t);
     }
     if (deleting && displayed.length === 0) {
       setDeleting(false);
-      setRoleIdx(i => (i + 1) % ROLES.length);
+      setRoleIdx((i) => (i + 1) % ROLES.length);
     }
   }, [displayed, deleting, paused, roleIdx]);
 
@@ -62,8 +68,7 @@ export default function Landing() {
           <Col md={6} className="mb-5 mb-md-0">
             <p className="landing-eyebrow reveal">Software Engineer</p>
             <h1 className="landing-title reveal reveal-delay-1">
-              Hello, I'm{" "}
-              <em>Katherin</em>
+              Hello, I'm <em>Katherin</em>
             </h1>
             <p className="landing-role reveal reveal-delay-2">
               <TypeWriter />
@@ -85,17 +90,24 @@ export default function Landing() {
             </a>
           </Col>
 
-          <Col md={6} className="d-flex justify-content-center reveal reveal-delay-2">
+          <Col
+            md={6}
+            className="d-flex justify-content-center reveal reveal-delay-2"
+          >
             <div className="profile-wrapper">
               <div className="profile-bg d-none d-md-block" />
-              <img src="/profile.jpg" alt="Katherin" className="profile-image" />
+              <img
+                src="/profile.jpg"
+                alt="Katherin"
+                className="profile-image"
+              />
               {/* Soft halo ring */}
               <div className="profile-halo d-none d-md-block" />
-              {/* Available badge */}
+              {/* Available badge
               <div className="available-badge">
                 <span className="available-dot" />
                 Open to work
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>
