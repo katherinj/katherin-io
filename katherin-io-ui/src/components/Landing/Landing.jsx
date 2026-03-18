@@ -3,12 +3,7 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Landing.css";
 
-const ROLES = [
-  "Full-Stack Developer",
-  "Problem Solver",
-  "Cloud Enthusiast",
-  "Creative Thinker",
-];
+const ROLES = ["Full-Stack Developer", "Problem Solver", "Creative Thinker"];
 
 function TypeWriter() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -18,31 +13,33 @@ function TypeWriter() {
 
   useEffect(() => {
     const current = ROLES[roleIdx];
+
     if (paused) {
       const t = setTimeout(() => setPaused(false), 1400);
       return () => clearTimeout(t);
     }
+
     if (!deleting && displayed.length < current.length) {
       const t = setTimeout(
         () => setDisplayed(current.slice(0, displayed.length + 1)),
         60,
       );
       return () => clearTimeout(t);
-    }
-    if (!deleting && displayed.length === current.length) {
-      setPaused(true);
-      const t = setTimeout(() => setDeleting(true), 1400);
+    } else if (!deleting && displayed.length === current.length) {
+      const t = setTimeout(() => {
+        setPaused(true);
+        setDeleting(true);
+      }, 1400);
       return () => clearTimeout(t);
-    }
-    if (deleting && displayed.length > 0) {
+    } else if (deleting && displayed.length > 0) {
       const t = setTimeout(
         () => setDisplayed(current.slice(0, displayed.length - 1)),
         35,
       );
       return () => clearTimeout(t);
-    }
-    if (deleting && displayed.length === 0) {
+    } else if (deleting && displayed.length === 0) {
       setDeleting(false);
+      setPaused(false);
       setRoleIdx((i) => (i + 1) % ROLES.length);
     }
   }, [displayed, deleting, paused, roleIdx]);
@@ -75,10 +72,9 @@ export default function Landing() {
             </p>
             <hr className="landing-divider reveal reveal-delay-2" />
             <p className="landing-subtext reveal reveal-delay-3">
-              I build things that are both smart and simple — full-stack
-              development, cloud-based solutions, and educational technology.
-              Excited by creative problem-solving and making data more
-              accessible through intuitive visualizations.
+              I build full-stack apps, wrangle data into things people can
+              actually understand, and find the most elegant solution I can.
+              Clean code, clear design, no fluff.
             </p>
             <a
               href="/resume.pdf"
@@ -101,7 +97,7 @@ export default function Landing() {
                 alt="Katherin"
                 className="profile-image"
               />
-              {/* Soft halo ring */}
+              {/* Soft halo ring *jobhvg /}
               <div className="profile-halo d-none d-md-block" />
               {/* Available badge
               <div className="available-badge">
