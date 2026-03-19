@@ -13,10 +13,16 @@ import useScrollReveal from "../../hooks/useScrollReveal";
 import "./App.css";
 
 export default function App() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    document.documentElement.setAttribute(
+      "data-theme",
+      dark ? "dark" : "light",
+    );
+    localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
   useScrollReveal(".reveal");
@@ -24,13 +30,21 @@ export default function App() {
   return (
     <div className="app">
       <MyNavbar dark={dark}>
-        <DarkModeToggle dark={dark} onToggle={() => setDark(d => !d)} />
+        <DarkModeToggle dark={dark} onToggle={() => setDark((d) => !d)} />
       </MyNavbar>
       <div className="main-content">
-        <div id="home"><Landing /></div>
-        <div id="about"><About /></div>
-        <div id="portfolio"><Portfolio /></div>
-        <div id="contact"><Contact /></div>
+        <div id="home">
+          <Landing />
+        </div>
+        <div id="about">
+          <About />
+        </div>
+        <div id="portfolio">
+          <Portfolio />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
       </div>
       <Footer />
     </div>
